@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  /* The Palette */
+  --mafia-base: #0a0a0a;
+  --mafia-surface: #1a1a1a;
+  --mafia-accent: #c5a059; 
+  --mafia-muted: #404040;
+  --mafia-danger: #7f1d1d;
+  
+  /* The Voice */
+  --font-cinzel: 'Cinzel', serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--mafia-base);
+  color: #e5e5e5;
+  /* We use the font variable directly via Tailwind or CSS */
+  font-family: var(--font-inter); 
+  overflow: hidden;
+}
+
+/* Kill the white autofill background */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #1a1a1a inset !important; /* matches mafia-surface */
+  -webkit-text-fill-color: white !important;
+  caret-color: white;
+}
