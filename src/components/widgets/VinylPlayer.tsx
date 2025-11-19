@@ -11,7 +11,7 @@ export const VinylPlayer = () => {
   
   const [playing, setPlaying] = useState(false);
   const [trackIndex, setTrackIndex] = useState(1);
-  const [volume, setVolume] = useState(0.5); // Default volume: 50%
+  const [volume, setVolume] = useState(0.1); // Default volume: 10%
   const [isMounted, setIsMounted] = useState(false);
 
   const TOTAL_TRACKS = 2;
