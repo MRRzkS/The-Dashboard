@@ -51,20 +51,19 @@ export default function Home() {
       {mode === "focus" && (
         <>
           {/* Left Wing: OPERATIONS & SECURE LINE */}
-          {/* Mobile: Auto Height. Desktop: Full Height. */}
-          <div className="col-span-1 md:col-span-7 flex flex-col gap-6 h-auto md:h-full pb-0 md:pb-10">
+          <div className="col-span-12 md:col-span-7 flex flex-col gap-6 h-auto pb-4 md:pb-10">
             
             {/* 1. Operations (The Main Work) */}
-            {/* We keep min-h-[300px] which is perfect for the 240px high cards + padding */}
-            <div className="flex-1 min-h-[320px] rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-4 md:p-6 backdrop-blur-sm flex flex-col">
-              <div className="flex items-center justify-between mb-2 relative"> {/* Added relative for the button positioning */}
+            {/* CHANGED: Increased min-h to 380px to fit the new Poker Cards comfortably */}
+            <div className="flex-1 min-h-[380px] rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-4 md:p-6 backdrop-blur-sm flex flex-col">
+              <div className="flex items-center justify-between mb-2 relative">
                 <h2 className="font-[family-name:var(--font-cinzel)] text-2xl text-gray-300">
                   Operations
                 </h2>
-                <div className="h-px flex-1 bg-[var(--mafia-muted)]/30 ml-6 mr-24"></div> {/* Added mr-24 to make room for the Deal Button */}
+                {/* Adjusted divider margin to make room for button */}
+                <div className="h-px flex-1 bg-[var(--mafia-muted)]/30 ml-6 mr-24"></div>
               </div>
               
-              {/* The Widget */}
               <OperationsWidget />
             </div>
 
@@ -76,7 +75,7 @@ export default function Home() {
           </div>
 
           {/* Right Wing: LEDGER & CONTROLS */}
-          <div className="col-span-1 md:col-span-5 flex flex-col gap-6 h-auto md:h-full pb-10 md:pb-10">
+          <div className="col-span-12 md:col-span-5 flex flex-col gap-6 h-auto pb-4 md:pb-10">
             
             {/* 1. The Ledger */}
             <div className="h-[300px] md:h-auto md:flex-1 rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-4 md:p-6 backdrop-blur-sm flex flex-col">
@@ -104,43 +103,43 @@ export default function Home() {
       {/* ================= RELAX MODE LAYOUT ================= */}
       {mode === "relax" && (
         <>
-          {/* Left Wing */}
-          <div className="col-span-1 md:col-span-7 flex flex-col gap-6 h-auto md:h-full pb-0 md:pb-10">
+          {/* Left Wing: INSPIRATION & BREATH - FINAL AESTHETIC BALANCE */}
+          <div className="col-span-12 md:col-span-7 flex flex-col gap-6 h-full pb-4 md:pb-10">
              
-             {/* 1. Quotes */}
-             <div className="h-[250px] md:h-auto md:flex-1 rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-6 backdrop-blur-sm flex flex-col items-center justify-center">
+             {/* 1. The Consigliere (Quotes) - FIXED HEIGHT for visual weight */}
+             <div className="h-64 rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-6 backdrop-blur-sm flex flex-col items-center justify-center">
                 <QuoteWidget />
              </div>
 
-             {/* 2. The Pulse */}
-             <div className="h-64 rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-6 backdrop-blur-sm">
+             {/* 2. THE PULSE - Takes all remaining space for maximum impact */}
+             <div className="flex-1 min-h-[256px] rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-6 backdrop-blur-sm h-full">
                 <PulseWidget />
              </div>
           </div>
 
-          {/* Right Wing */}
-          <div className="col-span-1 md:col-span-5 flex flex-col gap-6 h-auto md:h-full pb-10 md:pb-10">
+          {/* Right Wing: RECOVERY GRID (2x2) */}
+          <div className="col-span-12 md:col-span-5 flex flex-col gap-6 h-full pb-4 md:pb-10">
             
             {/* ROW 1: Timer + The Chain */}
-            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 min-h-[200px]">
-                {/* The Fuse */}
-                <div className="h-48 md:h-auto rounded-lg border border-[var(--mafia-accent)]/30 bg-[var(--mafia-surface)]/80 p-2 backdrop-blur-sm shadow-[0_0_15px_rgba(197,160,89,0.1)] flex flex-col">
+            <div className="flex-1 min-h-[200px] grid grid-cols-2 gap-4">
+                {/* The Fuse - ADDED h-full */}
+                <div className="rounded-lg border border-[var(--mafia-accent)]/30 bg-[var(--mafia-surface)]/80 p-2 backdrop-blur-sm shadow-[0_0_15px_rgba(197,160,89,0.1)] flex flex-col h-full">
                     <TimerWidget />
                 </div>
-                {/* The Chain */}
-                <div className="h-48 md:h-auto rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-2 backdrop-blur-sm flex flex-col">
+                {/* The Chain (Habits) - ADDED h-full */}
+                <div className="rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-2 backdrop-blur-sm flex flex-col h-full">
                     <ChainWidget />
                 </div>
             </div>
             
-            {/* ROW 2: Audio + Outlook */}
-            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 min-h-[200px]">
-                {/* Audio */}
-                <div className="h-32 md:h-auto rounded-lg border border-[var(--mafia-muted)]/20 bg-black/40 p-2 flex items-center justify-center overflow-hidden relative">
+            {/* ROW 2: Audio + The Outlook */}
+            <div className="flex-1 min-h-[200px] grid grid-cols-2 gap-4">
+                {/* Audio Player - ADDED h-full */}
+                <div className="rounded-lg border border-[var(--mafia-muted)]/20 bg-black/40 p-2 flex items-center justify-center overflow-hidden relative h-full">
                    <VinylPlayer />
                 </div>
-                 {/* Outlook */}
-                 <div className="h-48 md:h-auto rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-2 backdrop-blur-sm flex flex-col">
+                 {/* The Outlook (Weather) - ADDED h-full */}
+                 <div className="rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-2 backdrop-blur-sm flex flex-col h-full">
                     <OutlookWidget />
                 </div>
             </div>

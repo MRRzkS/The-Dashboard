@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export const PulseWidget = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="h-full w-full flex flex-col items-center justify-center relative overflow-hidden">
       <div className="text-[10px] uppercase tracking-widest text-[var(--mafia-muted)] absolute top-4 left-4">
         The Pulse
       </div>

@@ -14,11 +14,18 @@
 }
 
 body {
-  background-color: var(--mafia-base);
-  color: #e5e5e5;
-  /* We use the font variable directly via Tailwind or CSS */
-  font-family: var(--font-inter); 
-  overflow: hidden;
+  color: rgb(var(--foreground-rgb));
+  font-family: Arial, Helvetica, sans-serif; 
+  background-color: #0a0a0a; 
+  min-height: 100vh;
+}
+
+/* This targets the root and ensures scrolling works on the entire viewport */
+html {
+    min-height: 100vh;
+    overflow-y: scroll;
+    /* Ensure the HTML background matches the theme to prevent white flicker */
+    background-color: #0a0a0a; 
 }
 
 /* Kill the white autofill background */
@@ -45,4 +52,39 @@ textarea:-webkit-autofill {
 
 .rotate-y-180 {
   transform: rotateY(180deg);
+}
+
+/* Hide Scrollbar but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ----------------------------------- */
+/* Custom Scrollbar Styles (The Crest) */
+/* ----------------------------------- */
+
+/* Applies to the track (background) */
+::-webkit-scrollbar {
+  width: 6px; /* Width of the entire scrollbar */
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Mafia Surface Dark */
+  border-radius: 3px;
+}
+
+/* Applies to the thumb (the slider) */
+::-webkit-scrollbar-thumb {
+  background-color: #c5a059; /* Mafia Accent Gold */
+  border-radius: 3px;
+}
+
+/* Applies on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e5c07b; /* Lighter Gold on hover */
 }

@@ -17,7 +17,7 @@ export const ChainWidget = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col p-2">
+    <div className="h-full w-full flex flex-col p-2">
       <div className="text-[10px] uppercase tracking-widest text-[var(--mafia-muted)] mb-3">
         The Daily Rituals
       </div>
