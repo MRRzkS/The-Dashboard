@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🕴️ The Corelli Dashboard
 
-## Getting Started
+> *"Never let them know what you're thinking."*
 
-First, run the development server:
+A high-fidelity, distraction-free personal command centre designed for the disciplined operator. This dashboard enforces strict separation between **Deep Work (Focus Mode)** and **Decompression (Relax Mode)** using a Noir/Mafia aesthetic.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Built with **Next.js**, **Tailwind CSS**, and **TypeScript**. Zero database. Zero paper trail.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Dashboard Preview](https://github.com/user-attachments/assets/placeholder-image)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 The Dossier (Features)
 
-## Learn More
+The dashboard operates in two distinct modes, controlled by "The Fuse" (Timer).
 
-To learn more about Next.js, take a look at the following resources:
+### 💼 The Grind (Focus Mode)
+* **The Fuse:** A strict 25-minute countdown. You cannot leave until the job is done.
+* **Operations:** A session-based task list. Cross them out as you execute them.
+* **The Ledger:** A distraction-free notepad with `.txt` export capabilities ("The Drop").
+* **The Consigliere:** A secure, encrypted chat line to **Google Gemini AI** for strategy and intel.
+* **Vinyl Player:** Minimalist audio controls playing Noir Jazz.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🥃 The Lounge (Relax Mode)
+* **The Pulse:** A hypnotic breathing visualizer to lower your heart rate.
+* **The Chain:** A habit tracker to ensure your daily rituals are respected.
+* **The Outlook:** Live weather data (via Open-Meteo) to check the atmosphere.
+* **The Wire:** A digital dictaphone for recording voice notes/ideas.
+* **The Wisdom:** A shuffled deck of non-repeating quotes from history's greatest strategists.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔒 Security Protocols
+* **The Blind:** Press `Esc` to instantly black out the screen ("Operations Suspended").
+* **The Incinerator:** A kill-switch that wipes all Session Storage and resets the room.
+* **Session Storage:** Data lives only in your browser tab. Close it, and it's gone.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔫 The Armoury (Tech Stack)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Framework:** Next.js 14 (App Router)
+* **Styling:** Tailwind CSS + Framer Motion (for the smooth, smoky animations)
+* **Language:** TypeScript (Strict typing, no loose ends)
+* **State:** Zustand (Global store for mode switching)
+* **Icons:** Lucide React
+* **AI:** Google Generative AI SDK (`@google/genai`)
+
+---
+
+## 🏗️ Establishing the Safe House (Installation)
+
+1.  **Clone the Repository**
+    ```bash
+    git clone [https://github.com/your-username/mafia-dashboard.git](https://github.com/your-username/mafia-dashboard.git)
+    cd mafia-dashboard
+    ```
+
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Configure the Safe (`.env.local`)**
+    Create a `.env.local` file in the root directory. You need one key for the AI.
+    ```env
+    GEMINI_API_KEY=your_google_gemini_key_here
+    ```
+    *Note: The Weather widget uses Open-Meteo and requires no key.*
+
+4.  **Start the Operation**
+    ```bash
+    npm run dev
+    ```
+    Access the dashboard at `http://localhost:3000`.
+
+---
+
+## 🚀 Going Public (Deployment)
+
+This project is optimized for **Vercel**.
+
+1.  Push your code to a private GitHub repository.
+2.  Import the project into Vercel.
+3.  **CRITICAL:** Add your `GEMINI_API_KEY` in the Vercel **Environment Variables** settings.
+4.  Deploy.
+
+---
+
+## 📜 License
+
+**MIT License**. Use it freely. Just don't rat on your friends.
+
+---
+
+*Architected by "The Metronome".*
