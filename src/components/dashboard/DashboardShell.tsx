@@ -31,7 +31,8 @@ export const DashboardShell = ({ children }: { children: React.ReactNode }) => {
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative h-screen w-full overflow-hidden bg-[var(--mafia-base)] transition-colors duration-700"
+      // THE FIX: Auto scroll on mobile, fixed on desktop
+      className="relative min-h-screen w-full md:h-screen md:overflow-hidden overflow-y-auto bg-[var(--mafia-base)] transition-colors duration-700"
     >
       
       {/* 1. The Base Atmosphere */}
@@ -60,12 +61,12 @@ export const DashboardShell = ({ children }: { children: React.ReactNode }) => {
       {/* 3. Grain Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-[1] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
-      {/* 4. Content Grid */}
+      {/* 4. Content Grid - Adjusted padding for mobile */}
       <main className="relative z-20 h-full w-full p-4 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-6">
          {children}
       </main>
 
-    {/* 5. The Blind (Top Layer) */}
+      {/* 5. The Blind */}
       <PrivacyBlind />
       
     </div>
