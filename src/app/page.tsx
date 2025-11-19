@@ -1,5 +1,6 @@
 "use client";
 
+<link rel="icon" href="/favicon.ico" sizes="any" />
 import { DashboardShell } from "../components/dashboard/DashboardShell";
 import { useDashboardStore } from "../store/useStore";
 import { OperationsWidget } from "../components/widgets/OperationsWidget";
