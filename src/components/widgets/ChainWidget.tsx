@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Check } from "lucide-react";
 
-const HABITS = ["Movie", "Music", "Games"];
+const HABITS = ["Watch Movie", "Listen to Music", "Play Games"];
 
 export const ChainWidget = () => {
   // Simple state (in reality, you'd save this to storage)
