@@ -7,7 +7,7 @@ import { OperationsWidget } from "../components/widgets/OperationsWidget";
 import { VinylPlayer } from "../components/widgets/VinylPlayer";
 import { NotesWidget } from "../components/widgets/NotesWidget";
 import { TimerWidget } from "../components/widgets/TimerWidget";
-import { PulseWidget } from "../components/widgets/PulseWidget.tsx";
+
 import { QuoteWidget } from "../components/widgets/QuoteWidget";
 import { Incinerator } from "../components/widgets/Incinerator";
 import { ConsigliereWidget } from "../components/widgets/ConsigliereWidget";
@@ -16,6 +16,10 @@ import { OutlookWidget } from "../components/widgets/OutlookWidget";
 import { WireWidget } from "../components/widgets/WireWidget";
 import { BooksWidget } from "../components/widgets/BooksWidget";
 import { EnforcerWidget } from "../components/widgets/EnforcerWidget";
+import { RouletteWidget } from "../components/widgets/RouletteWidget";
+import { WheelWidget } from "../components/widgets/WheelWidget";
+import { DiceWidget } from "../components/widgets/DiceWidget";
+import { PokerWidget } from "../components/widgets/PokerWidget";
 
 export default function Home() {
   const { mode } = useDashboardStore();
@@ -160,6 +164,29 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+
+          {/* Casino Row: GAMES OF CHANCE */}
+          <div className="col-span-12 flex flex-col md:flex-row gap-4 md:gap-6 h-auto md:h-[320px] pb-4 md:pb-10">
+            {/* Roulette */}
+            <div className="flex-1 rounded-lg border border-[var(--mafia-muted)]/20 bg-black/40 backdrop-blur-sm overflow-hidden h-[250px] md:h-auto">
+              <RouletteWidget />
+            </div>
+
+            {/* The Wheel */}
+            <div className="flex-1 rounded-lg border border-[var(--mafia-muted)]/20 bg-black/40 backdrop-blur-sm overflow-hidden h-[250px] md:h-auto">
+              <WheelWidget />
+            </div>
+
+            {/* Dice */}
+            <div className="flex-1 rounded-lg border border-[var(--mafia-muted)]/20 bg-black/40 backdrop-blur-sm overflow-hidden h-[250px] md:h-auto">
+              <DiceWidget />
+            </div>
+
+            {/* Poker */}
+            <div className="flex-[1.5] rounded-lg border border-[var(--mafia-muted)]/20 bg-black/40 backdrop-blur-sm overflow-hidden h-[250px] md:h-auto">
+              <PokerWidget />
+            </div>
           </div>
         </>
       )}

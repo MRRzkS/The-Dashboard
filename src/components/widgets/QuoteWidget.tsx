@@ -29,7 +29,8 @@ const MASTER_LIST = [
 export const QuoteWidget = () => {
   const [currentQuote, setCurrentQuote] = useState(MASTER_LIST[0]);
   const [fade, setFade] = useState(false);
-  
+  const [isPaused, setIsPaused] = useState(false);
+
   // The Deck: Keeps track of unread quotes
   const deckRef = useRef<typeof MASTER_LIST>([]);
 
@@ -39,29 +40,44 @@ export const QuoteWidget = () => {
     nextQuote();
   }, []);
 
+  // Auto-rotate
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isPaused) {
+        nextQuote();
+      }
+    }, 10000); // 10 seconds
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
   const nextQuote = () => {
     setFade(true);
-    
+
     setTimeout(() => {
       // If deck is empty, reshuffle
       if (deckRef.current.length === 0) {
         deckRef.current = [...MASTER_LIST].sort(() => Math.random() - 0.5);
       }
-      
+
       // Draw the top card
       const next = deckRef.current.pop();
       if (next) setCurrentQuote(next);
-      
+
       setFade(false);
     }, 300);
   };
 
   return (
-    <div className="h-full w-full flex flex-col justify-center items-center text-center p-4 relative group">
+    <div
+      className="h-full w-full flex flex-col justify-center items-center text-center p-4 relative group cursor-default"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="absolute top-2 left-2 text-[var(--mafia-accent)] opacity-20">
         <Quote size={40} />
       </div>
-      
+
       <div className={`transition-opacity duration-500 ${fade ? "opacity-0" : "opacity-100"}`}>
         <p className="text-lg md:text-xl font-[family-name:var(--font-cinzel)] text-gray-200 mb-4 leading-relaxed px-4">
           "{currentQuote.text}"
@@ -71,7 +87,7 @@ export const QuoteWidget = () => {
         </p>
       </div>
 
-      <button 
+      <button
         onClick={nextQuote}
         className="absolute bottom-2 right-2 p-2 text-[var(--mafia-muted)] hover:text-[var(--mafia-accent)] transition-colors opacity-0 group-hover:opacity-100"
       >
