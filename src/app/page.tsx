@@ -102,14 +102,14 @@ export default function Home() {
           </div>
 
           {/* Strategy Row: THE BOOKS & THE ENFORCER */}
-          <div className="col-span-12 flex flex-col md:flex-row gap-4 md:gap-6 h-[300px] pb-4 md:pb-10">
+          <div className="col-span-12 flex flex-col md:flex-row gap-4 md:gap-6 h-auto md:h-[300px] pb-4 md:pb-10">
             {/* The Books (Analytics) - Takes more space */}
-            <div className="flex-[2] rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-4 backdrop-blur-sm flex flex-col overflow-hidden">
+            <div className="flex-[2] rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 p-4 backdrop-blur-sm flex flex-col overflow-hidden h-[450px] md:h-auto">
               <BooksWidget />
             </div>
 
             {/* The Enforcer (Terminal) - Takes less space */}
-            <div className="flex-1 rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 backdrop-blur-sm flex flex-col overflow-hidden">
+            <div className="flex-1 rounded-lg border border-[var(--mafia-muted)]/20 bg-[var(--mafia-surface)]/50 backdrop-blur-sm flex flex-col overflow-hidden h-[300px] md:h-auto">
               <EnforcerWidget />
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Home() {
           <div className="col-span-12 md:col-span-5 flex flex-col gap-4 md:gap-6 h-full pb-4 md:pb-10">
 
             {/* ROW 1: Timer + The Chain */}
-            <div className="flex-1 min-h-[200px] grid grid-cols-2 gap-4">
+            <div className="flex-1 min-h-[200px] grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* The Fuse - ADDED h-full */}
               <div className="rounded-lg border border-[var(--mafia-accent)]/30 bg-[var(--mafia-surface)]/80 p-2 backdrop-blur-sm shadow-[0_0_15px_rgba(197,160,89,0.1)] flex flex-col h-full">
                 <TimerWidget />
@@ -149,7 +149,7 @@ export default function Home() {
             </div>
 
             {/* ROW 2: Audio + The Outlook */}
-            <div className="flex-1 min-h-[200px] grid grid-cols-2 gap-4">
+            <div className="flex-1 min-h-[200px] grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Audio Player - ADDED h-full */}
               <div className="rounded-lg border border-[var(--mafia-muted)]/20 bg-black/40 p-2 flex items-center justify-center overflow-hidden relative h-full">
                 <VinylPlayer />

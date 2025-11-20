@@ -74,14 +74,24 @@ export const EnforcerWidget = () => {
 
             case "ping":
                 newHistory.push({ id: Date.now() + "r", type: "output", text: "Pinging server..." });
-                // Simulate async response
-                setTimeout(() => {
-                    setHistory(prev => [...prev, {
-                        id: Date.now() + "ping",
-                        type: "output",
-                        text: `Reply from 127.0.0.1: bytes=32 time=${Math.floor(Math.random() * 20)}ms TTL=128`
-                    }]);
-                }, 500);
+                const start = performance.now();
+                fetch(window.location.origin, { method: 'HEAD' })
+                    .then(() => {
+                        const end = performance.now();
+                        const latency = Math.round(end - start);
+                        setHistory(prev => [...prev, {
+                            id: Date.now() + "ping",
+                            type: "output",
+                            text: `Reply from ${window.location.hostname}: time=${latency}ms status=200 OK`
+                        }]);
+                    })
+                    .catch((err) => {
+                        setHistory(prev => [...prev, {
+                            id: Date.now() + "ping-err",
+                            type: "error",
+                            text: `Ping failed: ${err.message}`
+                        }]);
+                    });
                 break;
 
             default:
